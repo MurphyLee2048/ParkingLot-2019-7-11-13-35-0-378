@@ -199,5 +199,25 @@ public class ParkingBoyTest {
         assertSame("Please provide your parking ticket.", exception.getMessage());
     }
 
+    // AC3
+    @Test
+    public void should_return_Not_enough_position_when_parkinglot_is_full() throws Exception {
+        //given
+        ParkingLot parkingLot = new ParkingLot();
+        ParkingBoy parkingBoy = new ParkingBoy(parkingLot);
+
+        //when
+        for (int i = 0; i < 10; i++) {
+            parkingBoy.park(new Car());
+        }
+
+        //then
+        Throwable exception = Assertions.assertThrows(Exception.class, () -> {
+            parkingBoy.park(new Car());
+        });
+
+        assertSame("Not enough position.", exception.getMessage());
+    }
+
 }
 

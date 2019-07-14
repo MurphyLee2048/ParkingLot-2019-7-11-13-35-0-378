@@ -10,7 +10,7 @@ public class ParkingLot {
 
     public Ticket park(Car car) throws Exception {
         if (parkedCarTicket.size() >= 10) {
-            throw new Exception("parkinglot is full right now!");
+            throw new Exception("Not enough position.");
         }
         Ticket ticket = new Ticket();
         parkedCarTicket.put(ticket, car);  // 停车入场， ticket和car一一对应
