@@ -219,7 +219,7 @@ public class ParkingBoyTest {
         assertSame("Not enough position.", exception.getMessage());
     }
 
-    // AC4
+    // story3
     @Test
     public void should_park_cars_to_the_second_parkinglot_when_first_parkinglot_is_full() throws Exception {
         // given
