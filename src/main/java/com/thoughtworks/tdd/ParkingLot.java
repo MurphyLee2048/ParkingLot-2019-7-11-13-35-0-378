@@ -22,6 +22,6 @@ public class ParkingLot {
         if(!parkedCarTicket.containsKey(ticket))
             throw new Exception("Wrong Ticket");
 
-        return parkedCarTicket.remove(ticket);
+        return parkedCarTicket.remove(ticket);  // 删除记录
     }
 }

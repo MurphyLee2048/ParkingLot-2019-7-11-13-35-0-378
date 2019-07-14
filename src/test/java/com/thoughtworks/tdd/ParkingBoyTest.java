@@ -155,5 +155,29 @@ public class ParkingBoyTest {
         });
     }
 
+    //TODO
+
+    //story2, AC1
+    @Test
+    public void should_return_Unrecognized_parking_ticket_when_ticket_is_wrong() throws Exception{
+        //give
+        ParkingLot parkingLot = new ParkingLot();
+        ParkingBoy parkingBoy = new ParkingBoy(parkingLot);
+        Car car = new Car();
+
+        //when
+        Ticket ticket = parkingBoy.park(car);
+        Car fetchedCar = parkingBoy.fetch(ticket);
+
+
+        //then
+        Throwable exception = Assertions.assertThrows(Exception.class, () -> {
+            parkingBoy.fetch(ticket);
+        });
+
+        assertSame("Unrecognized parking ticket.",exception.getMessage());
+
+    }
+
 }
 
