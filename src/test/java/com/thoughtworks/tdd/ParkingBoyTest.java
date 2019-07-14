@@ -157,9 +157,10 @@ public class ParkingBoyTest {
 
     //TODO
 
-    //story2, AC1
+    // story2
+    // AC1
     @Test
-    public void should_return_Unrecognized_parking_ticket_when_ticket_is_wrong() throws Exception{
+    public void should_return_Unrecognized_parking_ticket_when_ticket_is_wrong() throws Exception {
         //give
         ParkingLot parkingLot = new ParkingLot();
         ParkingBoy parkingBoy = new ParkingBoy(parkingLot);
@@ -175,8 +176,27 @@ public class ParkingBoyTest {
             parkingBoy.fetch(ticket);
         });
 
-        assertSame("Unrecognized parking ticket.",exception.getMessage());
+        assertSame("Unrecognized parking ticket.", exception.getMessage());
 
+    }
+
+    // AC2
+    @Test
+    public void should_return_Please_provide_your_parking_ticket_when_does_not_provide_ticket() throws Exception {
+        // given
+        ParkingLot parkingLot = new ParkingLot();
+        ParkingBoy parkingBoy = new ParkingBoy(parkingLot);
+
+
+        //when
+        Ticket ticket = null;
+
+        //then
+        Throwable exception = Assertions.assertThrows(Exception.class, () -> {
+            parkingBoy.fetch(ticket);
+        });
+
+        assertSame("Please provide your parking ticket.", exception.getMessage());
     }
 
 }
