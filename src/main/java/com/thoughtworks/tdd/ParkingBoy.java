@@ -4,6 +4,10 @@ package com.thoughtworks.tdd;
 public class ParkingBoy {
     private ParkingLot firstParkingLot;
     private ParkingLot secondParkingLot;
+    private ParkingLot[] parkingLots;
+
+    public ParkingBoy() {
+    }
 
     public ParkingBoy(ParkingLot firstParkingLot) {
         this.firstParkingLot = firstParkingLot;
@@ -12,6 +16,10 @@ public class ParkingBoy {
     public ParkingBoy(ParkingLot firstParkingLot, ParkingLot secondParkingLot) {
         this.firstParkingLot = firstParkingLot;
         this.secondParkingLot = secondParkingLot;
+    }
+
+    public ParkingBoy(ParkingLot[] parkingLots) {
+        this.parkingLots = parkingLots;
     }
 
     public Ticket park(Car car) throws Exception {
