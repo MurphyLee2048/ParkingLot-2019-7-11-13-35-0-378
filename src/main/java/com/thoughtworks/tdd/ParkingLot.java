@@ -17,7 +17,6 @@ public class ParkingLot {
         return ticket;  // 返票给parkingboy
     }
 
-
     public Car fetch(Ticket ticket) throws Exception {
         if (ticket == null) {
             throw new Exception("Please provide your parking ticket.");
