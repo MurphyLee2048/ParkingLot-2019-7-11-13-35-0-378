@@ -202,21 +202,42 @@ public class ParkingBoyTest {
     // AC3
     @Test
     public void should_return_Not_enough_position_when_parkinglot_is_full() throws Exception {
-        //given
+        // given
         ParkingLot parkingLot = new ParkingLot();
         ParkingBoy parkingBoy = new ParkingBoy(parkingLot);
 
-        //when
+        // when
         for (int i = 0; i < 10; i++) {
             parkingBoy.park(new Car());
         }
 
-        //then
+        // then
         Throwable exception = Assertions.assertThrows(Exception.class, () -> {
             parkingBoy.park(new Car());
         });
 
         assertSame("Not enough position.", exception.getMessage());
+    }
+
+    // AC4
+    @Test
+    public void should_park_cars_to_the_second_parkinglot_when_first_parkinglot_is_full() throws Exception {
+        // given
+        ParkingLot firstParkingLot = new ParkingLot();
+        ParkingLot secondParkingLot = new ParkingLot();
+        ParkingBoy parkingBoy = new ParkingBoy(firstParkingLot, secondParkingLot);
+
+        // when
+        for (int i = 0; i < 10; i++) {
+            parkingBoy.park(new Car());
+        }
+
+        parkingBoy.park(new Car());  // go to secondParkingLot
+
+        // then
+        assertSame(firstParkingLot.getSize(), 10);
+        assertSame(secondParkingLot.getSize(), 1);
+
     }
 
 }
