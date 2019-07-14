@@ -4,7 +4,6 @@ import java.util.HashMap;
 
 public class ParkingLot {
     private HashMap<Ticket, Car> parkedCarTicket = new HashMap<>();
-    private final int capacity = 10;
     // 应由停车场来保管car和ticket
     private Car car;
     private Ticket ticket;
