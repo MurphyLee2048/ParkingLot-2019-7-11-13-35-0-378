@@ -13,4 +13,8 @@ public class HelloWorld {
     public String beenCalled() {
         return dependency.say();
     }
+
+    public static void main(String[] args){
+        System.out.println("hhe");
+    }
 }
