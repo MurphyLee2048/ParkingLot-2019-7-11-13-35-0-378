@@ -26,4 +26,8 @@ public class ParkingLot {
         }
         return parkedCarTicket.remove(ticket);  // 删除记录
     }
+
+    public int getSize() {
+        return parkedCarTicket.size();
+    }
 }
