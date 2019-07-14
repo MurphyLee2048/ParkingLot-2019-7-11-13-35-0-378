@@ -10,7 +10,7 @@ public class ParkingBoyTest {
 
     //AC1
     @Test
-    public void should_return_ticket_when_give_car() {
+    public void should_return_ticket_when_give_car() throws Exception {
         //given
         Car car = new Car();
         ParkingLot parkingLot = new ParkingLot();

@@ -6,7 +6,7 @@ public class Customer {
     private ParkingBoy parkingBoy;
     private Ticket ticket;
 
-    public void park(Car car) {
+    public void park(Car car) throws Exception{
         this.ticket = parkingBoy.park(car);
     }
 
