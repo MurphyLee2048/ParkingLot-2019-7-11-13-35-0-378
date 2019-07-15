@@ -7,6 +7,15 @@ public class ParkingLot {
     // 应由停车场来保管car和ticket
     private Car car;
     private Ticket ticket;
+    private int capacity;
+
+    public ParkingLot() {
+
+    }
+
+    public ParkingLot(int capacity) {
+        this.capacity = capacity;
+    }
 
     public Ticket park(Car car) throws Exception {
         if (parkedCarTicket.size() >= 10) {
@@ -30,4 +39,6 @@ public class ParkingLot {
     public int getSize() {
         return parkedCarTicket.size();
     }
+
+    public int getRemainingSize() {return capacity - parkedCarTicket.size();}
 }

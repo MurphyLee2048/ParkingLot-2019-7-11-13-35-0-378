@@ -2,9 +2,9 @@ package com.thoughtworks.tdd;
 
 
 public class ParkingBoy {
-    private ParkingLot firstParkingLot;
-    private ParkingLot secondParkingLot;
-    private ParkingLot[] parkingLots;
+    protected ParkingLot firstParkingLot;
+    protected ParkingLot secondParkingLot;
+    protected ParkingLot[] parkingLots;
 
     public ParkingBoy() {
     }

@@ -17,11 +17,27 @@ public class SmartParkingBoy extends ParkingBoy {
 
     @Override
     public Ticket park(Car car) throws Exception {
-        ParkingLot parkingLot = Arrays.stream(parkingLots)
-                .max(Comparator.comparing(ParkingLot::getSize))
-                .get();  // optional => parkinglot
-
-        return parkingLot.park(car);
+        if (firstParkingLot.getRemainingSize() >= secondParkingLot.getRemainingSize()) {
+            try {
+                return firstParkingLot.park(car);
+            } catch (Exception e) {
+                if (secondParkingLot == null) {
+                    throw e;
+                } else {
+                    return secondParkingLot.park(car);
+                }
+            }
+        } else {
+            try {
+                return secondParkingLot.park(car);
+            } catch (Exception e) {
+                if (firstParkingLot == null) {
+                    throw e;
+                } else {
+                    return firstParkingLot.park(car);
+                }
+            }
+        }
     }
 
     public int getParkingLotNumber() {
