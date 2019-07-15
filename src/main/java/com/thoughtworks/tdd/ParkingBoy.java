@@ -6,8 +6,7 @@ public class ParkingBoy {
     protected ParkingLot secondParkingLot;
     protected ParkingLot[] parkingLots;
 
-    public ParkingBoy() {
-    }
+    public ParkingBoy() { }
 
     public ParkingBoy(ParkingLot firstParkingLot) {
         this.firstParkingLot = firstParkingLot;

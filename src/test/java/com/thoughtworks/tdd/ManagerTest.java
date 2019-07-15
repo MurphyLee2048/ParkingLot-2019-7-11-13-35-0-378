@@ -33,6 +33,19 @@ public class ManagerTest {
     }
 
 
-//    // AC2
-//    public void
+    // AC2
+    @Test
+    public void  manager_park_fetch_car_from_the_parkinglots_managed_by_parking_boy() throws Exception {
+        Car car = new Car();
+        ParkingLot parkingLot = new ParkingLot();
+        ParkingBoy parkingBoy = new ParkingBoy(parkingLot);
+        Manager manager = new Manager();
+
+
+        manager.addParkingBoy(parkingBoy);
+        Ticket ticket = manager.park(car);
+
+
+        Assertions.assertEquals(car, manager.fetch(ticket));
+    }
 }
