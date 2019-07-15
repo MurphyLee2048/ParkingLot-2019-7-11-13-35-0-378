@@ -12,7 +12,7 @@ public class SuperSmartBoyTest {
         Car car = new Car();
         ParkingLot parkingLot1 = new ParkingLot(10);
         ParkingLot parkingLot2 = new ParkingLot(5);
-        SuperSmartParkingBoy superSmartParkingBoy = new SuperSmartParkingBoy();
+        SuperSmartParkingBoy superSmartParkingBoy = new SuperSmartParkingBoy(parkingLot1, parkingLot2);
 
         // when
         for (int i = 0; i <= 7; i++) {
@@ -22,7 +22,6 @@ public class SuperSmartBoyTest {
         // then
         assertEquals(parkingLot1.getSize(), parkingLot1.getSize());
         assertEquals(parkingLot2.getSize(), parkingLot2.getSize());
-
 
     }
 }
